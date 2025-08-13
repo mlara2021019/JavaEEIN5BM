@@ -1,0 +1,465 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f72d7a;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #e0246a;
+    box-shadow: 0 0 5px rgba(247, 45, 122, 0.5);
+}
+
+/* Topbar */
+.topbar {
+    background: #e0246a;
+    font-size: .85rem;
+    padding: .45rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.topbar span {
+    color: #fff;
+}
+
+.topbar i {
+    vertical-align: middle;
+    margin-right: .5rem;
+    color: #fff;
+}
+
+.topbar .social a {
+    color: #fff;
+    margin-left: .75rem;
+    font-size: 1rem;
+    transition: opacity .2s;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 30px; /* Ajusta según la altura de tu topbar si es fija */
+    left: 0;
+    width: 100%;
+    padding: 0.8rem 6%; /* Reducido el padding vertical */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9); /* Fondo ligeramente transparente */
+    color: #000;
+    flex-wrap: wrap;
+    z-index: 150; /* Menor que topbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 1.5rem; /* Reducido el tamaño de la fuente del logo */
+    font-weight: 700;
+    color: #e0246a;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo_image img {
+    height: 60px; /* Reducido el tamaño del logo */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo_image img:hover {
+    transform: rotate(10deg);
+}
+
+.contact-block {
+    display: flex;
+    gap: 1.5rem; /* Reducido el espacio entre items de contacto */
+    flex-wrap: wrap;
+    align-items: center; /* Alinea verticalmente los items de contacto */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: .6rem; /* Reducido el espacio entre ícono y texto */
+}
+
+.contact-item i {
+    font-size: 1.4rem; /* Reducido el tamaño de los íconos de contacto */
+    color: #e0246a;
+}
+
+.contact-item h4 {
+    font-size: .7rem; /* Reducido el tamaño de la fuente */
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #e0246a;
+    margin-bottom: 2px; /* Espacio mínimo debajo del título */
+}
+
+.contact-item span {
+    font-size: .8rem; /* Reducido el tamaño de la fuente */
+    color: #000;
+    display: block;
+    line-height: 1.2; /* Ajustado para que el texto sea más compacto */
+}
+
+.navMenu {
+    position: relative;
+    width: auto; /* Ancho automático para que ocupe solo lo necesario */
+    margin-left: auto; /* Empuja el menú hacia la derecha en pantallas grandes */
+    background: none; /* Quitamos el fondo para que se vea más integrado en el header */
+    padding: 0; /* Quitamos el padding */
+    box-shadow: none; /* Quitamos la sombra */
+    display: flex;
+    justify-content: flex-end; /* Alinea los ítems del menú a la derecha */
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Alinea los enlaces a la derecha */
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1rem; /* Reducido el tamaño de la fuente del menú */
+    color: #000000;
+    margin: 0 12px; /* Reducido el espacio entre enlaces */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 3px 0; /* Padding más pequeño */
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+}
+
+.navbar a:hover {
+    color: #f72d7a;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f72d7a;
+    bottom: -3px; /* Más cerca del texto */
+    border-radius: 5px;
+    transform: translateY(8px); /* Menor desplazamiento */
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    width: 100%;
+}
+
+/* Hero Section (sección principal con video) */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px; /* Ajusta el padding superior para el header más pequeño */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: rgb(255, 253, 253);
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeInUp 1.5s ease-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #f72d7a;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sección "Acerca de Nosotros" */
+.about-section {
+    padding: 80px 15%; /* Ajusta el padding superior para que no choque con el header */
+    background: linear-gradient(to bottom, #1f1c2c, #3f3d4e);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.about-section h1 {
+    font-size: 3.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #f72d7a;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6);
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    max-width: 900px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.about-highlight {
+    font-weight: 600;
+    color: #e0246a;
+}
+
+/* Scroll Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #f72d7a;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: #e0246a;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) { /* Ajuste para pantallas un poco más pequeñas */
+    .contact-block {
+        gap: 1rem;
+    }
+    .navbar a {
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 0.8rem 4%;
+        flex-direction: column; /* Apila los elementos en pantallas medianas */
+        align-items: flex-start;
+        top: 40px; /* Ajusta para la topbar */
+    }
+    .contact-block {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        justify-content: center; /* Centra los items de contacto */
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .logo-container {
+        width: 100%;
+        justify-content: center; /* Centra el logo */
+        margin-bottom: 1rem;
+    }
+    .navMenu {
+        width: 100%; /* El menú ocupa todo el ancho */
+        justify-content: center; /* Centra el menú */
+        margin-left: 0; /* Elimina el margen automático */
+        margin-top: 1rem;
+        background: #1f1c2c; /* Le damos un fondo al menú en móvil */
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+    .navbar {
+        flex-direction: column; /* Apila los enlaces en columnas */
+        align-items: center;
+    }
+    .navbar a {
+        margin: 5px 0; /* Espacio vertical entre enlaces */
+        font-size: 1rem;
+    }
+    .hero-section {
+        padding-top: 220px; /* Más espacio para el header expandido en tablet */
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .about-section {
+        padding: 60px 10%;
+    }
+    .about-section h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .5rem 3%;
+        font-size: .75rem;
+    }
+    .topbar .social {
+        margin-top: .5rem;
+    }
+    .header {
+        top: 70px; /* Ajusta el top para dejar espacio a la topbar apilada */
+    }
+    .hero-section {
+        padding-top: 250px; /* Más espacio para el header expandido en móvil */
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    .about-section {
+        padding: 50px 8%;
+    }
+    .about-section h1 {
+        font-size: 2.5rem;
+    }
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+    .logo_image img {
+        height: 50px;
+    }
+    .contact-item h4 {
+        font-size: .65rem;
+    }
+    .contact-item span {
+        font-size: .75rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .about-section h1 {
+        font-size: 2rem;
+    }
+    .scroll-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
