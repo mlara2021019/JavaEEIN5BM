@@ -72,9 +72,10 @@
                         <span class="perfil">Perfil</span>
                     </div>
                     <div class="user-menu" id="userMenu">
-                        <img src="Images/ususarioAdmin.png" class="user-avatar" alt="Avatar">
-                        <p class="user-name">EjemploUsuario</p>
-                        <p class="user-email">ejemploUsuario@gmail.com</p>
+                        <a class="dropdown-item" href="#"><img src="Images/ususarioAdmin.png" class="user-avatar" alt="Avatar"></a>
+                        <a class="dropdown-item" href="#">$(usuario.usuario)</a>
+                        <a class="dropdown-item" href="#">$(mlara@gmail.com)</a>
+                        <hr class="dropdown-divider">
                         <button id="buttonUsuario">Cambiar cuenta</button>
                         <button id="buttonUsuario">Cerrar Sesión</button>
                     </div>
@@ -98,13 +99,11 @@
                         <button class="service-btn view-details">Ingresar</button>
                     </a>
                 </div>
-                <div class="service-card" data-category="reparaciones">
+                <<div class="service-card" data-category="reparaciones">
                     <img src="Images/clientesbanner.jpg" alt="Alineación y balanceo" class="service-img">
                     <h3>Clientes</h3>
                     <p class="service-description">Usuarios ingresados que consumen nuestros servicios</p>
-                    <a href="ClientesAdmin.jsp">
-                        <button class="service-btn view-details">Ingresar</button>
-                    </a>
+                    <a class="service-btn view-details" href="Controlador?menu=ClientesAdmin&accion=Listar" target="myFrame">Ingresar</a>
                 </div>
                 <div class="service-card" data-category="diagnostico">
                     <img src="Images/autosbanner.jpg" alt="Diagnóstico computarizado" class="service-img">
