@@ -1,0 +1,517 @@
+/* General Body and Container */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* CAMBIO AQUI: Aplica el degradado al body */
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    min-height: 100vh; /* Asegura que el degradado cubra toda la altura */
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header/Navigation */
+.main-header {
+    background-color: #1a1a1a; /* Dark background for header */
+    color: white;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-end; /* Align nav to the right */
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li.active a {
+    color: #e20000; /* Red for active/hover state */
+}
+
+/* Contact Page Content */
+.contact-page-content {
+    padding: 40px 0;
+    background-color: #fff; /* White background for content area */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow around the white box */
+    margin: 20px auto; /* Center the content box */
+    max-width: 1160px; /* Slightly less than container to show background */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin-top: 150px; /* ajusta según el tamaño de tu navbar */
+}
+
+.page-title {
+    font-size: 2.5em;
+    color: #1a1a1a;
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 20px; /* Indent title to align with form */
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to stack on smaller screens */
+    gap: 40px; /* Space between form and map */
+    padding: 0 20px;
+}
+
+.form-section {
+    flex: 1; /* Allows form to take available space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.form-section h2 {
+    font-size: 1.6em;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e20000; /* Red underline */
+    padding-bottom: 10px;
+    display: inline-block; /* Makes underline only as wide as text */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.submit-button {
+    background-color: #e20000; /* Red button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #c00000; /* Darker red on hover */
+}
+
+.map-section {
+    flex: 1.2; /* Allows map to take more space */
+    min-width: 400px; /* Minimum width before wrapping */
+    position: relative; /* For positioning info bubble if custom */
+}
+
+.google-map-embed {
+    position: relative;
+    padding-bottom: 75%; /* Aspect ratio 4:3 (height/width * 100) */
+    height: 0;
+    overflow: hidden;
+    background: #e0e0e0; /* Placeholder background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.google-map-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Custom map info bubble styling (if not part of iframe) */
+.map-info-bubble {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10; /* Ensure it's above the map */
+    max-width: 250px;
+    font-size: 0.9em;
+}
+
+.map-info-bubble h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #1a1a1a;
+}
+
+.map-info-bubble p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.map-info-bubble a {
+    color: #e20000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.map-info-bubble a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .form-section,
+    .map-section {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .page-title,
+    .contact-grid {
+        padding-left: 0; /* Remove padding when stacked */
+        padding-right: 0;
+    }
+
+    .form-section h2 {
+        text-align: center;
+        width: 100%; /* Allow underline to span full width if desired, or make inline-block with center margins */
+        display: block; /* Make it a block element to center text */
+        border-bottom: none; /* Remove underline to center text */
+    }
+}
+
+@media (max-width: 576px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+    }
+
+    .page-title {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
+
+/* General Body and Container (asegúrate de que esto no duplique estilos existentes) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Puedes dejar el background-color del body como desees para el resto de la página */
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    /* Puedes mantener otras propiedades del body aquí si las necesitas, como: */
+    min-height: 100vh; /* Para que el degradado cubra toda la altura de la ventana */
+    color: #fff; /* Si el color del texto principal debe ser blanco */
+    /* ... y cualquier otra propiedad que desees para el body */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* BARRA DE CONTACTO SUPERIOR */
+.top-contact-bar {
+    background-color: #e20000; /* Rojo */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.top-contact-container {
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos uniformemente */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.top-contact-bar .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    font-size: 0.9em;
+}
+
+.top-contact-bar .contact-item i {
+    font-size: 1.1em;
+}
+
+/* PIE DE PÁGINA PRINCIPAL */
+.site-footer {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: white;
+    padding: 40px 0;
+    position: relative; /* Necesario para el botón fijo "Escríbenos" */
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea el contenido hacia arriba */
+}
+
+.footer-section {
+    flex: 1; /* Distribuye el espacio entre las secciones */
+    min-width: 250px; /* Ancho mínimo para cada sección antes de envolver */
+    margin-bottom: 20px; /* Espacio entre secciones en pantallas pequeñas */
+    padding: 0 15px;
+}
+
+.footer-section.about-us {
+    flex: 1.5; /* Da más espacio a la sección "Acerca de nosotros" */
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e20000; /* Subrayado rojo */
+    padding-bottom: 10px;
+    display: inline-block; /* Para que el subrayado sea solo tan ancho como el texto */
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    display: flex; /* Para los horarios, alinear texto y hora */
+    justify-content: space-between; /* Para los horarios, empujar la hora a la derecha */
+    align-items: center;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #e20000; /* Rojo al pasar el ratón */
+}
+
+.footer-section.contact-info .contact-item {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono y el texto arriba */
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.footer-section.contact-info .contact-item i {
+    font-size: 1.4em;
+    color: #e20000; /* Icono rojo */
+    margin-top: 3px; /* Ajuste de alineación */
+}
+
+.footer-section.contact-info .contact-item h4 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.footer-section.contact-info .contact-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Estilo específico para la sección de Horarios */
+.footer-section.horarios ul li span {
+    color: #e20000; /* Rojo para la hora */
+    font-weight: bold;
+}
+
+/* Pie de página inferior (Política de Privacidad) */
+.footer-bottom {
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    color: #ccc;
+    border-top: 1px solid #333; /* Línea divisoria sutil */
+}
+
+/* Botón flotante "Escríbenos" */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e20000; /* Rojo */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+}
+
+.fixed-button:hover {
+    background-color: #c00000; /* Rojo más oscuro al pasar el ratón */
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 992px) {
+    .top-contact-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        min-width: unset; /* Elimina el ancho mínimo en pantallas pequeñas */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        width: fit-content; /* Permite que el subrayado se ajuste al texto */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-section.contact-info .contact-item {
+        justify-content: center; /* Centra los ítems de contacto */
+    }
+
+    .footer-section.horarios ul li {
+        justify-content: center; /* Centra los horarios */
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 3%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.logo_image img {
+    height: 75px;
+    width: auto;
+}
+
+.item .logo { /* Este .logo está dentro de .item, no del header, así que su CSS no afecta */
+    color: #fff;
+    font-size: 30px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 20px; /* o prueba con 50px si lo quieres más centrado */
+    padding-right: 100px;
+}
+ 
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+ 
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    width: 100%;
+}

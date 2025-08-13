@@ -1,0 +1,98 @@
+.text-item h2 {
+    font-size: 40px;
+    line-height: 1;
+}
+ 
+.text-item p {
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.social-icon a i {
+    color: #fff;
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+ 
+.social-icon a:hover i {
+    transform: scale(1.2);
+}
+
+.login-section .form-box h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+    color: #fff;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.remember-password {
+    font-size: 14px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.remember-password label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+ 
+.remember-password a {
+    color: #fff;
+    text-decoration: none;
+}
+ 
+.remember-password a:hover {
+    text-decoration: underline;
+}
+
+.create-account {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+    color: #fff;
+}
+ 
+.create-account p a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+ 
+.create-account p a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 4px #000;
+    }
+.titulo {
+    font-size: 48px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 4px #000;
+    }    
